@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useCallback, useEffect, useState } from "react";
 import { fetchCountries } from "../services/countriesService";
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -10,20 +10,19 @@ const CountriesProvider = ({ children }) => {
     const [countriesByRegion, setCountriesByRegion] = useState([]);
     const [searchTerm, setSearchTerm] = useState("")
 
-    const loadCountries = async () => {
+    const loadCountries = useCallback(async () => { // ⬅ Aquí usamos useCallback
         try {
-            const res = await fetchCountries();
-            setCountries(res);
-            setCountriesByRegion(res); // 🔹 Asegurar que también se reinicia la lista mostrada
+          const res = await fetchCountries();
+          setCountries(res);
+          setCountriesByRegion(res);
         } catch (error) {
-            console.error("Error al cargar los países:", error);
+          console.error("Error al cargar los países:", error);
         }
-    };
+      }, []);
 
     useEffect(() => {
-    
         loadCountries();
-    }, []);
+    }, [loadCountries]);
 
     const loadCountriesByRegion = (region) => {
         if (!countries.length) return; // Evitar errores si aún no hay datos
