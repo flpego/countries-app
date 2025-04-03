@@ -11,7 +11,14 @@
   display: flex;
   gap: 0.5rem;
   align-items: center;
-  width: 100px;
+  width: 150px;
   font-size: 0.9rem;
   font-family: var(--font-family);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+}
+
+.theme-options button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--color-shadow);
 }
