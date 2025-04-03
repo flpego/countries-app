@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0 4rem 0 ;
+}
+
+/* Search form */
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 10px 16px;
+  box-shadow: 1px 1px 16px var(--color-shadow);
+  width: 40%;
+  border-radius: 4px;
+}
+
+.search-form input {
+  border: 0;
+  font-size: .9rem;
+  background: transparent;
+  color: var(--text-color);
+  font-family:var(--font-family);
+}
+
+.search-form input:focus {
+    outline: none;
+}
+
+.icon-search {
+   font-size: 20px;
+   color: var(--text-color);
+}
+
+.icon-container {
+  position: relative;
+}
+
+/* Region Select Form */
+.region-form{
+  width: 18%;
+  max-width: 300px;
+  position: relative;
+  display: inline-block;
+}
+.region-form select {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px; /* Esquinas redondeadas */
+  background-color: var(--background-two);
+  color: var(--text-color);
+  cursor: pointer;
+  box-shadow: 0px 4px 16px var(--color-shadow);
+  font-family:var(--font-family);
+  appearance: none; /* Elimina la apariencia predeterminada */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.region-form svg {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; 
+  color: var(--text-color); 
+}
+
+.region-form select:focus {
+  outline: none;
+}
+
+.region-form select option {
+  color: var(--text-color);
+  padding: 10px;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    padding:1rem;
+    margin-bottom: 2rem;
+  }
+
+  .search-form {
+    width: 100%;
+  }
+
+  .region-form {
+    width: 65%;
+  }
+}
+

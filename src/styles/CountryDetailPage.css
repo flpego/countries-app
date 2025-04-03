@@ -1,0 +1,131 @@
+.country-detail-page {
+  min-height: 120vh;
+}
+.country-page-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+/* back button */
+.back-button-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 3rem 7rem;
+}
+.back-button-container button {
+  background: var(--background-two);
+  box-shadow: 1px 1px 5px var(--color-shadow);
+  color: var(--text-color);
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.back-button-container button:hover {
+  cursor: pointer;
+  background-color: var(--color-shadow);
+}
+
+.country-flag-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 3rem;
+}
+
+.country-flag-container img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  padding: 0 4rem;
+}
+
+/* country info */
+
+.country-info-container h4 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.country-info-header-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 5rem;
+  margin: 1.5rem 0;
+}
+
+.country-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.country-info-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* border countries  */
+.country-border-container {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.border-countries-list {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.border-countries-list span {
+  background: var(--background-two);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 1024px) {
+  .country-page-container {
+    grid-template-columns: 2fr 1fr;
+  }
+  .country-flag-container img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 880px) {
+  .country-page-container {
+    grid-template-columns: 1fr;
+  }
+  .back-button-container {
+    padding: 3rem;
+  }
+  .country-flag-container {
+    padding: 0;
+  }
+  .country-flag-container img {
+    width: 100%;
+  }
+  .country-info-container  {
+    padding: 2rem;
+  }
+  .country-border-container {
+    gap: 1.5rem;
+    margin-top: 4rem;
+  }
+}
